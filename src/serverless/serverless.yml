@@ -1,0 +1,20 @@
+service: prophet-lambda-napkin-paper
+
+provider:
+  name: aws
+  memorySize: 3008
+  timeout: 15
+  ecr:
+    images:
+      prophetnapkinimage:
+        path: ./
+        platform: linux/amd64
+  environment:
+    HOME: /tmp
+
+functions:
+  prophetrunner:
+    ephemeralStorageSize: 3008
+    image:
+      name: prophetnapkinimage
+

@@ -1,0 +1,6 @@
+project:
+	id: d153d3dc-2604-4f12-8334-d193002ea855
+	name: sigmod_napkin
+
+defaults:
+	python_version: 3.11
