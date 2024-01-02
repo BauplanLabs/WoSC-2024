@@ -55,8 +55,24 @@ Note that:
 * the `re-build container` number in the paper is the packaging time in serverless CLI (time to build locally and upload to ECR);
 * the `re-run function` number in the paper is the sum of the time to update Cloud Formation after ECR is updated and the time to run the function and get a result back with the client script (cold start).
 
-### Snowflake (Snowpark)
+### Snowflake + dbt
 
+#### Pre-requisites
+
+We assume you have a working Snowflake account and [dbt](https://docs.getdbt.com/) installed in your target environment (e.g. `python3 -m pip install dbt-snowflake`): we also assume you have configured your dbt profile correctly to connect to Snowflake. Please note that you need to enable [Anaconda in your Snowflake account](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-packages#using-third-party-packages-from-anaconda) to have third-party libraries installed.
+
+We will be using Snowflake standard TPC as a the first query in a SQL (the _CUSTOMER_ table) + Python DAG, which will be isomorphic to the Bauplan DAG below.
+
+#### How to run
+
+You can first run a baseline test to check that the cloud setup is working correctly:
+
+```bash
+cd snowpark
+dbt run
+```
+
+You should find a new `PYTHON_MODEL` table in the target Snowflake database. To test an iteration loop, uncomment the relevant lines in `python_model.py` and re-run dbt with `dbt run`.
 
 ### Bauplan
 
@@ -78,4 +94,4 @@ Cd into the `bauplan/sigmod` directory and run the following command:
 bauplan run
 ```
 
-You can comment in / out the relevant sections in `models.py` to test the Prophet installation, or try out other packages for more experiments.
+You can comment in / out the relevant sections in `models.py` to test the Prophet installation, or try out other packages for more experiments. Re-running a second time (i.e. removing and adding again Prophet) with the same dependencies will hit the Pypi cache, resulting in 0 seconds spent on re-installation.

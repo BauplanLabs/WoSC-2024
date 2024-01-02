@@ -11,9 +11,9 @@ def lambda_handler(event, context):
     # UN-COMMENT HERE IF YOU HAVE INSTALLED PROPHET 
     # IN THE DOCKER FOR THE LAMBDA!
     
-    import prophet
-    v =  version('prophet') 
-    assert v == '1.1.5'
+    # import prophet
+    # v =  version('prophet') 
+    # assert v == '1.1.5'
     
     print("All done!")
 

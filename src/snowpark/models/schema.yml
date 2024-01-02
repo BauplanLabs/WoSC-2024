@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: retrieve_columns
+    description: This is a simple query that retrieves some columns to start the pipeline (it mirrors the Bauplan setup)
+
+    columns:
+      - name: C_CUSTOMER_ID
+        description: Unique customer identifier.
+
+      - name: C_SALUTATION
+        description: Customer's salutation (e.g. Dr).
+
+      - name: C_BIRTH_DAY
+        description: Customer's birth day.
+      
+      - name: C_BIRTH_MONTH
+        description: Customer's birth month.
+
