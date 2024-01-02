@@ -5,10 +5,13 @@ import uuid
 
 def lambda_handler(event, context):
     start = time.time()
-    import prophet
+    v = None
     from importlib.metadata import version
     
-    # verify prophet version
+    # UN-COMMENT HERE IF YOU HAVE INSTALLED PROPHET 
+    # IN THE DOCKER FOR THE LAMBDA!
+    
+    import prophet
     v =  version('prophet') 
     assert v == '1.1.5'
     
