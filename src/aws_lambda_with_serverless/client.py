@@ -3,17 +3,16 @@
 Vanilla script to invoke the Lambda function, print out the response, and exit.
 We time the invocation, so we can see how long it takes.
 
-
 Note that the script expects an additional argument, the name of the Lambda function; also
 AWS credentials are read by boto3 in the usual way (it looks for ~/.aws/credentials first, then
-environment variables): make sure to supply these.
+environment variables): make sure to supply these when running the script.
 
 """
 
 import boto3
 import json
-# we setup the client before the function, so that it does not add
-# to the invocation time
+# we setup the client before the function, so that it does
+# not add to the invocation time
 lambda_client = boto3.client('lambda', region_name='us-east-1')
 
 

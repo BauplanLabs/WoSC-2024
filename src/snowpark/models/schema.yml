@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: retrieve_columns
-    description: This is a simple query that retrieves some columns to start the pipeline (it mirrors the Bauplan setup)
+    description: This is a simple query that retrieves some columns to start the pipeline (it mirrors the Bauplan DAG)
 
     columns:
       - name: C_CUSTOMER_ID

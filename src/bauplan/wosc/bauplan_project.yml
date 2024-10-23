@@ -1,0 +1,6 @@
+project:
+    id: 20f4454f-0d85-49f1-b5a7-e48bb698a53e
+    name: wosc_napkin_math
+
+defaults:
+	python_version: 3.11
