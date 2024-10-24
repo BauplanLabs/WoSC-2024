@@ -4,7 +4,7 @@ This repo contains code snippets to reproduce the baseline numbers in the paper 
 
 Quick links:
 
-* paper pre-print on arxiv (coming soon!)
+* paper pre-print on [arxiv](https://arxiv.org/abs/2410.17465)
 * camera-ready paper on ACM Digital Library (coming soon!)
 * [bauplan website](https://www.bauplanlabs.com/)
 
@@ -20,7 +20,7 @@ Last code update: February 2024.
 
 This repo contains Bauplan, AWS Lambda (with Docker) and Snowpark (plus dbt) code snippets to reproduce the numbers in Table 2 $$the paper. The goal is to show the difference in feedback loop time when iterating on a data pipeline with a _new_ package dependency: in other words, we care about are _iteration_ numbers, not startup / building numbers. For example the Lambda setup does not consider the fact that the Docker image and the function need to be created before even iterating on packages. While exact numbers may differ based on the specific setup, Python version, package, platform evolution, the ``napkin math'' difference should be consistent across different setups.
 
-For more details on the use cases, the industry motivation and the background assumptions, please refer to our paper (coming soon!).
+For more details on the use cases, the industry motivation and the background assumptions, please refer to our [paper](https://arxiv.org/abs/2410.17465).
 
 ### Testing setup
 
